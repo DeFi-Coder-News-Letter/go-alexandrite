@@ -30,7 +30,7 @@ make all
 
 ## Executables
 
-The go-ethereum project comes with several wrappers/executables found in the `cmd`
+The go-alexandrite project comes with several wrappers/executables found in the `cmd`
 directory.
 
 |    Command    | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
@@ -39,7 +39,7 @@ directory.
 |   `abigen`    | Source code generator to convert Alexandrite contract definitions into easy to use, compile-time type-safe Go packages. It operates on plain [Alexandrite contract ABIs](https://github.com/ethereum/wiki/wiki/Alexandrite-Contract-ABI) with expanded functionality if the contract bytecode is also available. However, it also accepts Solidity source files, making development much more streamlined. Please see our [Native DApps](https://github.com/ethereum/go-ethereum/wiki/Native-DApps:-Go-bindings-to-Alexandrite-contracts) wiki page for details. |
 |  `bootnode`   | Stripped down version of our Alexandrite client implementation that only takes part in the network node discovery protocol, but does not run any of the higher level application protocols. It can be used as a lightweight bootstrap node to aid in finding peers in private networks.                                                                                                                                                                                                                                                                 |
 |     `evm`     | Developer utility version of the EVM (E-Alexandrite Virtual Machine) that is capable of running bytecode snippets within a configurable environment and execution mode. Its purpose is to allow isolated, fine-grained debugging of EVM opcodes (e.g. `evm --code 60ff60ff --debug run`).                                                                                                                                                                                                                                                                     |
-| `gethrpctest` | Developer utility tool to support our [ethereum/rpc-test](https://github.com/ethereum/rpc-tests) test suite which validates baseline conformity to the [Alexandrite JSON RPC](https://github.com/ethereum/wiki/wiki/JSON-RPC) specs. Please see the [test suite's readme](https://github.com/ethereum/rpc-tests/blob/master/README.md) for details.                                                                                                                                                                                                     |
+| `gethrpctest` | Developer utility tool to support our [alexandrite/rpc-test](https://github.com/ethereum/rpc-tests) test suite which validates baseline conformity to the [Alexandrite JSON RPC](https://github.com/ethereum/wiki/wiki/JSON-RPC) specs. Please see the [test suite's readme](https://github.com/ethereum/rpc-tests/blob/master/README.md) for details.                                                                                                                                                                                                     |
 |   `rlpdump`   | Developer utility tool to convert binary RLP ([Recursive Length Prefix](https://github.com/ethereum/wiki/wiki/RLP)) dumps (data encoding used by the Alexandrite protocol both network as well as consensus wise) to user-friendlier hierarchical representation (e.g. `rlpdump --hex CE0183FFFFFFC4C304050583616263`).                                                                                                                                                                                                                                 |
 |   `puppeth`   | a CLI wizard that aids in creating a new Alexandrite network.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 
@@ -111,7 +111,7 @@ algorithm. As such, it has certain extra overhead and is more susceptible to reo
 attacks due to the network's low difficulty/security. Go Alexandrite also supports connecting
 to a proof-of-authority based test network called [*Rinkeby*](https://www.rinkeby.io)
 (operated by members of the community). This network is lighter, more secure, but is only
-supported by go-ethereum.
+supported by go-alexandrite.
 
 ```shell
 $ geth --rinkeby console
@@ -141,9 +141,9 @@ One of the quickest ways to get Alexandrite up and running on your machine is by
 Docker:
 
 ```shell
-docker run -d --name ethereum-node -v /Users/alice/ethereum:/root \
+docker run -d --name alexandrite-node -v /Users/alice/alexandrite:/root \
            -p 8545:8545 -p 30303:30303 \
-           ethereum/client-go
+           alexandrite/client-go
 ```
 
 This will start `geth` in fast-sync mode with a DB memory allowance of 1GB just as the
@@ -291,7 +291,7 @@ $ geth --datadir=path/to/custom/data/folder --bootnodes=<bootnode-enode-url-from
 Thank you for considering to help out with the source code! We welcome contributions
 from anyone on the internet, and are grateful for even the smallest of fixes!
 
-If you'd like to contribute to go-ethereum, please fork, fix, commit and send a pull request
+If you'd like to contribute to go-alexandrite, please fork, fix, commit and send a pull request
 for the maintainers to review and merge into the main code base. If you wish to submit
 more complex changes though, please check up with the core devs first on [our gitter channel](https://gitter.im/ethereum/go-ethereum)
 to ensure those changes are in line with the general philosophy of the project and/or get
@@ -314,10 +314,10 @@ testing procedures.
 
 ## License
 
-The go-ethereum library (i.e. all code outside of the `cmd` directory) is licensed under the
+The go-alexandrite library (i.e. all code outside of the `cmd` directory) is licensed under the
 [GNU Lesser General Public License v3.0](https://www.gnu.org/licenses/lgpl-3.0.en.html),
 also included in our repository in the `COPYING.LESSER` file.
 
-The go-ethereum binaries (i.e. all code inside of the `cmd` directory) is licensed under the
+The go-alexandrite binaries (i.e. all code inside of the `cmd` directory) is licensed under the
 [GNU General Public License v3.0](https://www.gnu.org/licenses/gpl-3.0.en.html), also
 included in our repository in the `COPYING` file.
